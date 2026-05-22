@@ -10,7 +10,7 @@ export function Navbar() {
     }
   };
 
-  const navItems = ['Singularity', 'Mitosis', 'Ecosystem', 'Horizon'];
+  const navItems = ['Singularity', 'Mitosis', 'Ecosystem', 'Synergy', 'Horizon'];
 
   return (
     <nav

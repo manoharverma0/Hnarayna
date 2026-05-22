@@ -21,10 +21,12 @@ export function NarrativeScene() {
   // Define globe project coordinates on sphere surface (spherical coordinates mapped to 3D vectors)
   const projectNodes = useMemo(() => {
     return [
-      new THREE.Vector3().setFromSphericalCoords(1.62, Math.PI / 3, Math.PI / 4), // Project 0
-      new THREE.Vector3().setFromSphericalCoords(1.62, Math.PI / 2.2, -Math.PI / 3), // Project 1
-      new THREE.Vector3().setFromSphericalCoords(1.62, Math.PI / 1.8, Math.PI / 1.2), // Project 2
-      new THREE.Vector3().setFromSphericalCoords(1.62, Math.PI / 1.5, -Math.PI / 1.5), // Project 3
+      new THREE.Vector3().setFromSphericalCoords(1.62, Math.PI / 3.0, Math.PI / 4.0), // Project 0 (HotelNear.in)
+      new THREE.Vector3().setFromSphericalCoords(1.62, Math.PI / 2.2, -Math.PI / 3.0), // Project 1 (MindSpace)
+      new THREE.Vector3().setFromSphericalCoords(1.62, Math.PI / 1.8, Math.PI / 1.2), // Project 2 (Glimpse Gallery)
+      new THREE.Vector3().setFromSphericalCoords(1.62, Math.PI / 1.5, -Math.PI / 1.5), // Project 3 (TCS NQT Simulator)
+      new THREE.Vector3().setFromSphericalCoords(1.62, Math.PI / 2.5, Math.PI / 6.0), // Project 4 (WatchToEarn)
+      new THREE.Vector3().setFromSphericalCoords(1.62, Math.PI / 1.2, -Math.PI / 6.0), // Project 5 (CLI AI Agent)
     ];
   }, []);
 
@@ -37,8 +39,8 @@ export function NarrativeScene() {
     // 1. VISIBILITY & SCALE TRANSITIONS (Scroll-driven)
     // ----------------------------------------------------
 
-    // Chapter 1 (Core) visibility: peaks at 0, fades by 0.3
-    const c1Vis = Math.max(0, 1 - scrollProgress / 0.3);
+    // Chapter 1 (Core) visibility: peaks at 0, fades by 0.22
+    const c1Vis = Math.max(0, 1 - scrollProgress / 0.22);
     if (coreRef.current) {
       coreRef.current.visible = c1Vis > 0.01;
       coreRef.current.scale.setScalar(c1Vis);
@@ -46,12 +48,12 @@ export function NarrativeScene() {
       coreRef.current.rotation.x = time * 0.05;
     }
 
-    // Chapter 2 (Divisions) visibility: peaks at 0.33, fades towards 0 and 0.66
+    // Chapter 2 (Divisions) visibility: peaks at 0.25, fades towards 0 and 0.48
     let c2Vis = 0;
-    if (scrollProgress < 0.33) {
-      c2Vis = scrollProgress / 0.33;
+    if (scrollProgress < 0.25) {
+      c2Vis = scrollProgress / 0.25;
     } else {
-      c2Vis = Math.max(0, 1 - (scrollProgress - 0.33) / 0.33);
+      c2Vis = Math.max(0, 1 - (scrollProgress - 0.25) / 0.23);
     }
     if (divisionsRef.current) {
       divisionsRef.current.visible = c2Vis > 0.01;
@@ -75,12 +77,12 @@ export function NarrativeScene() {
       }
     }
 
-    // Chapter 3 (Globe) visibility: peaks at 0.66, fades towards 0.33 and 0.95
+    // Chapter 3 (Globe) visibility: peaks at 0.5, fades towards 0.25 and 0.73
     let c3Vis = 0;
-    if (scrollProgress > 0.33 && scrollProgress < 0.66) {
-      c3Vis = (scrollProgress - 0.33) / 0.33;
-    } else if (scrollProgress >= 0.66) {
-      c3Vis = Math.max(0, 1 - (scrollProgress - 0.66) / 0.29);
+    if (scrollProgress > 0.25 && scrollProgress < 0.5) {
+      c3Vis = (scrollProgress - 0.25) / 0.25;
+    } else if (scrollProgress >= 0.5) {
+      c3Vis = Math.max(0, 1 - (scrollProgress - 0.5) / 0.23);
     }
     if (globeRef.current) {
       globeRef.current.visible = c3Vis > 0.01;
@@ -89,8 +91,8 @@ export function NarrativeScene() {
       globeRef.current.rotation.y = time * 0.1;
     }
 
-    // Chapter 4 (Grid Tunnel) visibility: fades in from 0.66 to 1.0
-    const c4Vis = scrollProgress > 0.66 ? (scrollProgress - 0.66) / 0.34 : 0;
+    // Chapter 4 & 5 (Grid Tunnel) visibility: fades in from 0.5 to 0.75 and stays
+    const c4Vis = scrollProgress > 0.5 ? Math.min(1.0, (scrollProgress - 0.5) / 0.25) : 0;
     if (tunnelRef.current) {
       tunnelRef.current.visible = c4Vis > 0.01;
       tunnelRef.current.scale.setScalar(c4Vis);
@@ -140,7 +142,7 @@ export function NarrativeScene() {
             clearcoat={1.0}
             clearcoatRoughness={0.05}
             ior={1.55}
-            color="#6366f1"
+            color="#5B4CFF"
             flatShading
             transparent
             opacity={0.85}
@@ -150,7 +152,7 @@ export function NarrativeScene() {
         {/* Neon Wireframe Sphere Inner */}
         <mesh>
           <sphereGeometry args={[0.7, 16, 16]} />
-          <meshBasicMaterial color="#a855f7" wireframe transparent opacity={0.6} />
+          <meshBasicMaterial color="#C9A84C" wireframe transparent opacity={0.6} />
         </mesh>
         
         {/* Outer Orbiting Ring */}
@@ -174,14 +176,14 @@ export function NarrativeScene() {
               thickness={1.5}
               clearcoat={1.0}
               ior={1.5}
-              color="#6366f1"
+              color="#5B4CFF"
               transparent
               opacity={0.9}
             />
           </mesh>
           <mesh>
             <boxGeometry args={[0.7, 0.7, 0.7]} />
-            <meshBasicMaterial color="#3b82f6" wireframe transparent opacity={0.5} />
+            <meshBasicMaterial color="#5B4CFF" wireframe transparent opacity={0.5} />
           </mesh>
         </group>
 
@@ -195,14 +197,14 @@ export function NarrativeScene() {
               thickness={1.5}
               clearcoat={1.0}
               ior={1.5}
-              color="#a855f7"
+              color="#C9A84C"
               transparent
               opacity={0.9}
             />
           </mesh>
           <mesh rotation={[Math.PI / 4, 0, 0]}>
             <sphereGeometry args={[0.9, 8, 8]} />
-            <meshBasicMaterial color="#bf55ec" wireframe transparent opacity={0.4} />
+            <meshBasicMaterial color="#C9A84C" wireframe transparent opacity={0.4} />
           </mesh>
         </group>
 
@@ -216,14 +218,14 @@ export function NarrativeScene() {
               thickness={1.5}
               clearcoat={1.0}
               ior={1.5}
-              color="#bf55ec"
+              color="#4CFFB4"
               transparent
               opacity={0.9}
             />
           </mesh>
           <mesh>
             <sphereGeometry args={[0.22, 16, 16]} />
-            <meshBasicMaterial color="#6366f1" transparent opacity={0.8} />
+            <meshBasicMaterial color="#4CFFB4" transparent opacity={0.8} />
           </mesh>
         </group>
       </group>
@@ -246,24 +248,30 @@ export function NarrativeScene() {
         {/* Latitude/Longitude Wireframe grid overlay */}
         <mesh>
           <sphereGeometry args={[1.51, 24, 24]} />
-          <meshBasicMaterial color="#6366f1" wireframe transparent opacity={0.25} />
+          <meshBasicMaterial color="#5B4CFF" wireframe transparent opacity={0.25} />
         </mesh>
 
         {/* Orbit Rings representing satellite connections */}
         <mesh rotation={[Math.PI / 3, Math.PI / 4, 0]}>
           <torusGeometry args={[2.0, 0.01, 8, 64]} />
-          <meshBasicMaterial color="#a855f7" transparent opacity={0.3} />
+          <meshBasicMaterial color="#C9A84C" transparent opacity={0.3} />
         </mesh>
         <mesh rotation={[-Math.PI / 4, -Math.PI / 6, 0]}>
           <torusGeometry args={[2.1, 0.008, 8, 64]} />
-          <meshBasicMaterial color="#bf55ec" transparent opacity={0.25} />
+          <meshBasicMaterial color="#4CFFB4" transparent opacity={0.25} />
         </mesh>
 
         {/* Project Hotspots (nodes coordinates) */}
         {projectNodes.map((pos, idx) => {
           const isSelected = selectedProject === idx;
           const nodeScale = isSelected ? 2.5 : 1.0;
-          const nodeColor = idx === 0 ? '#6366f1' : idx === 1 ? '#a855f7' : idx === 2 ? '#bf55ec' : '#3b82f6';
+          const nodeColor = 
+            idx === 0 ? '#5B4CFF' : 
+            idx === 1 ? '#5B4CFF' : 
+            idx === 2 ? '#4CFFB4' : 
+            idx === 3 ? '#C9A84C' : 
+            idx === 4 ? '#C9A84C' : 
+            '#4CFFB4';
           
           return (
             <group key={idx} position={pos}>
@@ -283,20 +291,20 @@ export function NarrativeScene() {
       </group>
 
       {/* ----------------------------------------------------
-          CHAPTER 4: THE HORIZON (Infinite Grid Tunnel)
+          CHAPTER 4 & 5: THE HORIZON (Infinite Grid Tunnel)
           ---------------------------------------------------- */}
       <group ref={tunnelRef}>
         {/* Floor grid */}
         <gridHelper
           ref={gridFloorRef}
-          args={[60, 30, '#6366f1', '#1e1b4b']}
+          args={[60, 30, '#5B4CFF', '#09081f']}
           position={[0, -2.2, 0]}
         />
         
         {/* Ceiling grid */}
         <gridHelper
           ref={gridCeilRef}
-          args={[60, 30, '#a855f7', '#1e1b4b']}
+          args={[60, 30, '#4CFFB4', '#09081f']}
           position={[0, 2.2, 0]}
         />
       </group>

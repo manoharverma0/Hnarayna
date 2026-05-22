@@ -12,21 +12,19 @@ function CameraRig() {
     const { scrollProgress, mouseX, mouseY } = useSceneStore.getState();
     const camera = state.camera;
 
-    // Camera depth (Z-axis) path driven by scroll progress
-    // Phase 1 (Singularity): Close-up (z=5.0)
-    // Phase 2 (Mitosis): Wide out to view the 3 orbiting companies (z=7.2)
-    // Phase 3 (Ecosystem): Even wider to see the node connections (z=8.0)
-    // Phase 4 (Vortex): Pulling deep into the black hole center (z=4.2)
     let targetZ = 5.0;
-    if (scrollProgress < 0.33) {
-      // 0 to 0.33
-      targetZ = THREE.MathUtils.lerp(5.0, 7.2, scrollProgress / 0.33);
-    } else if (scrollProgress < 0.66) {
-      // 0.33 to 0.66
-      targetZ = THREE.MathUtils.lerp(7.2, 8.0, (scrollProgress - 0.33) / 0.33);
+    if (scrollProgress < 0.25) {
+      // Phase 1 (Singularity): 0.0 -> 0.25 (z: 5.0 -> 6.5)
+      targetZ = THREE.MathUtils.lerp(5.0, 6.5, scrollProgress / 0.25);
+    } else if (scrollProgress < 0.50) {
+      // Phase 2 (Mitosis): 0.25 -> 0.50 (z: 6.5 -> 7.5)
+      targetZ = THREE.MathUtils.lerp(6.5, 7.5, (scrollProgress - 0.25) / 0.25);
+    } else if (scrollProgress < 0.75) {
+      // Phase 3 (Ecosystem): 0.50 -> 0.75 (z: 7.5 -> 8.5)
+      targetZ = THREE.MathUtils.lerp(7.5, 8.5, (scrollProgress - 0.50) / 0.25);
     } else {
-      // 0.66 to 1.0
-      targetZ = THREE.MathUtils.lerp(8.0, 4.2, (scrollProgress - 0.66) / 0.34);
+      // Phase 4 & 5 (Synergy & Horizon): 0.75 -> 1.0 (z: 8.5 -> 4.5)
+      targetZ = THREE.MathUtils.lerp(8.5, 4.5, (scrollProgress - 0.75) / 0.25);
     }
 
     // Smoothly interpolate camera Z
