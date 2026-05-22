@@ -46,13 +46,14 @@ export function Contact() {
             style={{
               fontSize: '11px',
               fontFamily: "'JetBrains Mono', monospace",
-              color: '#6366f1',
+              color: '#5B4CFF',
               letterSpacing: '3px',
               textTransform: 'uppercase',
               fontWeight: 'bold',
               display: 'block',
               marginBottom: '8px',
             }}
+            className="reveal-fade"
           >
             Chapter 04 // Horizon
           </span>
@@ -67,6 +68,7 @@ export function Contact() {
               margin: '0 0 24px 0',
               fontFamily: "'Space Grotesk', sans-serif",
             }}
+            className="reveal-fade"
           >
             Enter the Event Horizon
           </h2>
@@ -78,6 +80,7 @@ export function Contact() {
               lineHeight: 1.6,
               margin: '0 0 32px 0',
             }}
+            className="reveal-fade"
           >
             Whether you are launching a child company, seeking incubation for an active project, or want to collaborate with Hnarayna Labs, our gravitational pull is ready to accelerate your trajectory.
           </p>
@@ -91,21 +94,23 @@ export function Contact() {
               fontSize: '12px',
               color: '#a3a3b8',
             }}
+            className="reveal-fade"
           >
             <div>
-              <span style={{ color: '#6366f1' }}>▸ LOCATION:</span> Orbiting Coordinate [0x8A9E]
+              <span style={{ color: '#5B4CFF' }}>▸ LOCATION:</span> Orbiting Coordinate [0x8A9E]
             </div>
             <div>
-              <span style={{ color: '#a855f7' }}>▸ EMAIL:</span> gateway@hnarayna.ventures
+              <span style={{ color: '#C9A84C' }}>▸ EMAIL:</span> gateway@hnarayna.ventures
             </div>
             <div>
-              <span style={{ color: '#bf55ec' }}>▸ NET:</span> hnarayna.ventures
+              <span style={{ color: '#4CFFB4' }}>▸ NET:</span> hnarayna.ventures
             </div>
           </div>
         </div>
 
         {/* Right Side: Tech Inquiry Form */}
         <div
+          className="reveal-fade"
           style={{
             flex: '1.2',
             minWidth: '320px',
@@ -132,12 +137,12 @@ export function Contact() {
                   width: '48px',
                   height: '48px',
                   borderRadius: '50%',
-                  background: 'rgba(191, 85, 236, 0.1)',
-                  border: '1px solid #bf55ec',
+                  background: 'rgba(76, 255, 180, 0.1)',
+                  border: '1px solid #4CFFB4',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
-                  color: '#bf55ec',
+                  color: '#4CFFB4',
                   margin: '0 auto 24px auto',
                   animation: 'scaleIn 0.5s ease',
                 }}
@@ -262,7 +267,7 @@ export function Contact() {
               <button
                 type="submit"
                 style={{
-                  background: 'linear-gradient(90deg, #6366f1, #a855f7)',
+                  background: 'linear-gradient(90deg, #5B4CFF, #C9A84C)',
                   border: 'none',
                   borderRadius: '8px',
                   padding: '14px 28px',
@@ -278,7 +283,7 @@ export function Contact() {
                   justifyContent: 'center',
                   gap: '8px',
                   transition: 'transform 0.3s ease, box-shadow 0.3s ease',
-                  boxShadow: '0 4px 15px rgba(99, 102, 241, 0.2)',
+                  boxShadow: '0 4px 15px rgba(91, 76, 255, 0.2)',
                 }}
                 className="submit-btn"
               >

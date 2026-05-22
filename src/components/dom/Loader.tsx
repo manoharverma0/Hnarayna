@@ -57,12 +57,12 @@ export function Loader() {
           maxWidth: '400px',
         }}
       >
-        <div style={{ fontSize: '10px', letterSpacing: '4px', color: '#6366f1', fontWeight: 'bold' }}>
+        <div style={{ fontSize: '10px', letterSpacing: '4px', color: '#5B4CFF', fontWeight: 'bold' }}>
           CORE COMPILING
         </div>
         <div style={{ width: '100%', display: 'flex', justifyContent: 'space-between', fontSize: '12px' }}>
           <span>HNARAYNA_SYSTEM_BOOT.sh</span>
-          <span style={{ color: '#a855f7' }}>{percent}%</span>
+          <span style={{ color: '#C9A84C' }}>{percent}%</span>
         </div>
         
         {/* Progress Bar Container */}
@@ -83,9 +83,9 @@ export function Loader() {
               left: 0,
               height: '100%',
               width: `${percent}%`,
-              background: 'linear-gradient(90deg, #6366f1, #a855f7)',
+              background: 'linear-gradient(90deg, #5B4CFF, #C9A84C)',
               transition: 'width 0.1s ease',
-              boxShadow: '0 0 10px rgba(99, 102, 241, 0.5)',
+              boxShadow: '0 0 10px rgba(91, 76, 255, 0.5)',
             }}
           />
         </div>

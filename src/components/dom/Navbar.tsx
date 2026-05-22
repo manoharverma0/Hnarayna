@@ -10,7 +10,7 @@ export function Navbar() {
     }
   };
 
-  const navItems = ['Singularity', 'Mitosis', 'Ecosystem', 'Synergy', 'Horizon'];
+  const navItems = ['Singularity', 'Mitosis', 'Ecosystem', 'Horizon'];
 
   return (
     <nav
@@ -48,7 +48,7 @@ export function Navbar() {
             display: 'inline-block',
             width: '8px',
             height: '8px',
-            background: 'linear-gradient(135deg, #6366f1, #a855f7)',
+            background: 'linear-gradient(135deg, #5B4CFF, #C9A84C)',
             borderRadius: '50%',
           }}
         />
@@ -72,7 +72,7 @@ export function Navbar() {
               style={{
                 background: 'none',
                 border: 'none',
-                color: isActive ? '#6366f1' : '#858599',
+                color: isActive ? '#5B4CFF' : '#858599',
                 fontSize: '11px',
                 fontFamily: "'JetBrains Mono', monospace",
                 fontWeight: 600,
@@ -93,8 +93,8 @@ export function Navbar() {
                     left: 0,
                     width: '100%',
                     height: '1px',
-                    background: '#6366f1',
-                    boxShadow: '0 0 8px #6366f1',
+                    background: '#5B4CFF',
+                    boxShadow: '0 0 8px #5B4CFF',
                   }}
                 />
               )}

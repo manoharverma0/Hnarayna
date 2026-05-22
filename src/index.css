@@ -2,9 +2,9 @@
 
 :root {
   --color-bg: #020205;
-  --color-indigo: #6366f1;
-  --color-purple: #a855f7;
-  --color-lavender: #bf55ec;
+  --color-indigo: #5B4CFF;
+  --color-purple: #C9A84C;
+  --color-lavender: #4CFFB4;
   --color-text-muted: #858599;
 }
 
@@ -79,6 +79,12 @@ body {
   }
 }
 
+.reveal-fade {
+  opacity: 0;
+  transform: translateY(40px);
+  will-change: transform, opacity;
+}
+
 /* Interactive Elements Hover overrides */
 .form-input:focus {
   border-color: rgba(0, 243, 255, 0.4) !important;
@@ -119,7 +125,7 @@ body {
 .custom-cursor {
   width: 20px;
   height: 20px;
-  border: 1px solid rgba(99, 102, 241, 0.5);
+  border: 1px solid rgba(91, 76, 255, 0.5);
   border-radius: 50%;
   position: fixed;
   transform: translate(-50%, -50%);
@@ -145,6 +151,6 @@ body {
 .hover-active .custom-cursor {
   width: 40px;
   height: 40px;
-  background-color: rgba(99, 102, 241, 0.05);
-  border-color: rgba(99, 102, 241, 1);
+  background-color: rgba(91, 76, 255, 0.05);
+  border-color: rgba(91, 76, 255, 1);
 }

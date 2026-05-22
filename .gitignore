@@ -23,6 +23,7 @@ dist-ssr
 *.sln
 *.sw?
 
-# Netlify
+# Build & Deploy
 .netlify
+scratch_temp/
 

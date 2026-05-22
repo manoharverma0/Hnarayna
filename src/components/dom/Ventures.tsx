@@ -70,7 +70,7 @@ function VentureCard({ index, title, desc, icon, tags, color, setHoveredPlanet }
         position: 'relative',
         overflow: 'hidden',
       }}
-      className="venture-card"
+      className="venture-card reveal-fade"
     >
       {/* Glow Backdrop */}
       <div
@@ -160,23 +160,23 @@ export function Ventures() {
   const venturesData = [
     {
       title: 'Aetheris AI',
-      desc: 'Building next-generation AI infrastructure for enterprises. From custom LLM deployments to intelligent automation pipelines — we make machine intelligence practical and profitable.',
+      desc: 'Building autonomous cognitive networks, neural orchestration frameworks, and next-generation model training models.',
       icon: <Bot size={22} />,
-      tags: ['Large Language Models', 'MLOps', 'AI Agents', 'Computer Vision'],
+      tags: ['LLMs', 'Cognitive Systems', 'Agents'],
       color: '#5B4CFF',
     },
     {
       title: 'Spectra Cyber',
-      desc: 'End-to-end cybersecurity solutions for modern digital businesses. Penetration testing, zero-trust architecture, and real-time threat intelligence for organizations that cannot afford to be vulnerable.',
+      desc: 'Quantum-resistant encryption, decentralized identity protocols, and automated active threat vector mitigation engines.',
       icon: <Shield size={22} />,
-      tags: ['Penetration Testing', 'Zero Trust', 'SOC', 'Threat Intel'],
+      tags: ['Quantum Sec', 'ZKP', 'Zero Trust'],
       color: '#C9A84C',
     },
     {
       title: 'Helix Bio',
-      desc: 'Software systems for the life sciences industry. Clinical trial management, genomic data pipelines, and regulatory compliance tools built for the speed of modern biotech.',
+      desc: 'Pioneering organic computing architectures, DNA-based storage models, and biological data synthesis pipelines.',
       icon: <Dna size={22} />,
-      tags: ['Genomics', 'Clinical Data', 'HIPAA', 'Regulatory Tech'],
+      tags: ['Bio-Computing', 'DNA-Storage', 'Synthesis'],
       color: '#4CFFB4',
     },
   ];
@@ -200,35 +200,31 @@ export function Ventures() {
           style={{
             fontSize: '11px',
             fontFamily: "'JetBrains Mono', monospace",
-            color: '#5B4CFF',
+            color: '#C9A84C',
             letterSpacing: '3px',
             textTransform: 'uppercase',
             fontWeight: 'bold',
             display: 'block',
             marginBottom: '8px',
           }}
+          className="reveal-fade"
         >
-          Chapter 02 // Verticals
+          Chapter 02 // Division
         </span>
         <h2
           style={{
             fontSize: 'calc(1.8rem + 2vw)',
             fontWeight: 800,
             textTransform: 'uppercase',
-            letterSpacing: '-1.5px',
+            letterSpacing: '-1px',
             lineHeight: 1.0,
             color: '#ffffff',
             margin: '0 0 16px 0',
             fontFamily: "'Space Grotesk', sans-serif",
           }}
+          className="reveal-fade"
         >
-          Three Verticals.<br />
-          <span style={{
-            background: 'linear-gradient(135deg, #5B4CFF, #C9A84C)',
-            WebkitBackgroundClip: 'text',
-            WebkitTextFillColor: 'transparent',
-            backgroundClip: 'text',
-          }}>One Mission.</span>
+          Mitosis of Capital & Code
         </h2>
         <p
           style={{
@@ -239,8 +235,9 @@ export function Ventures() {
             maxWidth: '550px',
             margin: 0,
           }}
+          className="reveal-fade"
         >
-          H Narayana Ventures splits its core resources into independent technology vectors, building specialized products to solve critical industry challenges.
+          Hnarayna splits its core resources into independent technology vectors, giving birth to dedicated child companies focused on key frontiers.
         </p>
       </div>
 

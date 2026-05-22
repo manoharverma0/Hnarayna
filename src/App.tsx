@@ -6,7 +6,6 @@ import { Navbar } from './components/dom/Navbar';
 import { Hero } from './components/dom/Hero';
 import { Ventures } from './components/dom/Ventures';
 import { Projects } from './components/dom/Projects';
-import { Vision } from './components/dom/Vision';
 import { Contact } from './components/dom/Contact';
 import Lenis from 'lenis';
 import { gsap } from 'gsap';
@@ -68,7 +67,7 @@ export default function App() {
       });
 
       // Track active section changes on entering viewport centers
-      const sections = ['#chapter-1', '#chapter-2', '#chapter-3', '#chapter-4', '#chapter-5'];
+      const sections = ['#chapter-1', '#chapter-2', '#chapter-3', '#chapter-4'];
       sections.forEach((sel, i) => {
         ScrollTrigger.create({
           trigger: sel,
@@ -80,6 +79,28 @@ export default function App() {
             }
           },
         });
+      });
+
+      // DOM Scroll Reveals for Chapters 2 to 4
+      ['#chapter-2', '#chapter-3', '#chapter-4'].forEach((sel) => {
+        const revealElements = document.querySelectorAll(`${sel} .reveal-fade`);
+        if (revealElements.length > 0) {
+          gsap.fromTo(revealElements,
+            { opacity: 0, y: 40 },
+            {
+              opacity: 1,
+              y: 0,
+              duration: 1.0,
+              stagger: 0.15,
+              ease: 'power3.out',
+              scrollTrigger: {
+                trigger: sel,
+                start: 'top 75%',
+                toggleActions: 'play none none reverse',
+              }
+            }
+          );
+        }
       });
     });
 
@@ -140,9 +161,6 @@ export default function App() {
           <Projects />
         </section>
         <section id="chapter-4" className="scroll-section">
-          <Vision />
-        </section>
-        <section id="chapter-5" className="scroll-section">
           <Contact />
         </section>
       </main>

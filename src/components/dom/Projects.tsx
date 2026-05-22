@@ -1,5 +1,5 @@
 import { useSceneStore } from '../../stores/sceneStore';
-import { MapPin, Brain, Camera, ClipboardList, Tv, Terminal } from 'lucide-react';
+import { Cpu, Terminal, Layers, Activity } from 'lucide-react';
 
 export function Projects() {
   const selectedProject = useSceneStore((state) => state.selectedProject);
@@ -7,52 +7,32 @@ export function Projects() {
 
   const projectsData = [
     {
-      title: 'HotelNear.in',
-      venture: 'Incubator Venture',
-      desc: 'Hyperlocal hotel discovery platform for pilgrimage and religious tourism destinations across Madhya Pradesh. First product targeting Kubereshwar Dham.',
-      status: 'building',
-      tech: ['Next.js', 'Node.js', 'MongoDB', 'Maps API'],
-      icon: <MapPin size={18} />,
+      title: 'Nexus Node',
+      venture: 'Aetheris AI',
+      desc: 'Distributed GPU clustering network allowing models to dynamically scale compute workloads across edge nodes.',
+      icon: <Cpu size={18} />,
+      metrics: { latency: '4.2ms', reliability: '99.99%', nodes: '12,480' },
     },
     {
-      title: 'MindSpace',
-      venture: 'Aetheris AI Partner',
-      desc: 'Mental wellness journal and mood tracking application with AI-powered insights, streak systems, and anonymous community support.',
-      status: 'building',
-      tech: ['React', 'Appwrite', 'Redux', 'AI'],
-      icon: <Brain size={18} />,
-    },
-    {
-      title: 'Glimpse Gallery',
-      venture: 'Incubator Venture',
-      desc: '3D photography showcase showcase platform with immersive WebGL viewer. Portfolio-grade presentation for photographers who refuse to be ordinary.',
-      status: 'live',
-      tech: ['Three.js', 'GSAP', 'WebGL', 'Vercel'],
-      icon: <Camera size={18} />,
-    },
-    {
-      title: 'TCS NQT Simulator',
-      venture: 'Incubator Venture',
-      desc: 'Full-fidelity exam simulator for TCS National Qualifier Test. Timed sections, adaptive difficulty, and detailed performance analytics.',
-      status: 'planned',
-      tech: ['React', 'Node.js', 'PostgreSQL'],
-      icon: <ClipboardList size={18} />,
-    },
-    {
-      title: 'WatchToEarn',
-      venture: 'Spectra Cyber Partner',
-      desc: 'Micro-reward platform where users earn verified digital credits by engaging with brand content. Transparent reward tracking.',
-      status: 'planned',
-      tech: ['MERN', 'Redis', 'JWT'],
-      icon: <Tv size={18} />,
-    },
-    {
-      title: 'CLI AI Agent',
-      venture: 'Aetheris AI Product',
-      desc: 'Terminal-native AI coding assistant with project context awareness, file editing, and multi-model routing. Built for developers who live in the terminal.',
-      status: 'planned',
-      tech: ['Node.js', 'Python', 'LLM APIs'],
+      title: 'Lattice Crypt',
+      venture: 'Spectra Cyber',
+      desc: 'Post-quantum mathematical cryptography libraries designed to secure decentralized protocols.',
       icon: <Terminal size={18} />,
+      metrics: { security: 'PQ-Grade', cipher: 'Kyber1024', throughput: '2.5 GB/s' },
+    },
+    {
+      title: 'SynthFold 3D',
+      venture: 'Helix Bio',
+      desc: 'Generative transformer models predicting protein structures and molecular binding affinities in seconds.',
+      icon: <Layers size={18} />,
+      metrics: { models: 'AlphaFold-X', accuracy: '98.4%', speed: '600x faster' },
+    },
+    {
+      title: 'Spectra Guard',
+      venture: 'Spectra Cyber',
+      desc: 'Intelligent network monitoring agents utilizing predictive security heuristics to preempt vector attacks.',
+      icon: <Activity size={18} />,
+      metrics: { threatsBlocked: '4.8M+', responseTime: '80ms', falsePositives: '0.001%' },
     },
   ];
 
@@ -75,13 +55,14 @@ export function Projects() {
           style={{
             fontSize: '11px',
             fontFamily: "'JetBrains Mono', monospace",
-            color: '#6366f1',
+            color: '#5B4CFF',
             letterSpacing: '3px',
             textTransform: 'uppercase',
             fontWeight: 'bold',
             display: 'block',
             marginBottom: '8px',
           }}
+          className="reveal-fade"
         >
           Chapter 03 // Ecosystem
         </span>
@@ -96,6 +77,7 @@ export function Projects() {
             margin: '0 0 16px 0',
             fontFamily: "'Space Grotesk', sans-serif",
           }}
+          className="reveal-fade"
         >
           Incubator Pipeline
         </h2>
@@ -108,17 +90,18 @@ export function Projects() {
             maxWidth: '550px',
             margin: 0,
           }}
+          className="reveal-fade"
         >
-          An interconnected neural network of active software products, sharing code and infrastructure coordinates.
+          An interconnected neural network of active software nodes, sharing infrastructure to solve critical computing bottlenecks.
         </p>
       </div>
 
-      {/* Responsive Grid layout */}
+      {/* Horizontal grid layout */}
       <div
         style={{
           display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
-          gap: '24px',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))',
+          gap: '20px',
           width: '100%',
         }}
       >
@@ -129,21 +112,19 @@ export function Projects() {
               key={project.title}
               onMouseEnter={() => setSelectedProject(index)}
               onMouseLeave={() => setSelectedProject(null)}
+              className="reveal-fade"
               style={{
-                background: isSelected ? 'rgba(99, 102, 241, 0.03)' : 'rgba(255, 255, 255, 0.01)',
+                background: isSelected ? 'rgba(91, 76, 255, 0.03)' : 'rgba(255, 255, 255, 0.01)',
                 border: isSelected
-                  ? '1px solid rgba(99, 102, 241, 0.25)'
+                  ? '1px solid rgba(91, 76, 255, 0.25)'
                   : '1px solid rgba(255, 255, 255, 0.03)',
-                borderRadius: '16px',
-                padding: '32px',
+                borderRadius: '12px',
+                padding: '24px',
                 pointerEvents: 'auto',
                 cursor: 'pointer',
                 transition: 'all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1)',
-                boxShadow: isSelected ? '0 10px 30px rgba(99, 102, 241, 0.05)' : 'none',
+                boxShadow: isSelected ? '0 10px 30px rgba(91, 76, 255, 0.05)' : 'none',
                 transform: isSelected ? 'translateY(-4px)' : 'translateY(0)',
-                display: 'flex',
-                flexDirection: 'column',
-                gap: '12px',
               }}
             >
               <div
@@ -151,117 +132,78 @@ export function Projects() {
                   display: 'flex',
                   justifyContent: 'space-between',
                   alignItems: 'center',
-                  marginBottom: '8px',
+                  marginBottom: '16px',
                 }}
               >
                 <span
                   style={{
                     fontSize: '10px',
                     fontFamily: "'JetBrains Mono', monospace",
-                    color: isSelected ? '#5B4CFF' : '#6e6e80',
+                    color: isSelected ? '#5B4CFF' : '#858599',
                     textTransform: 'uppercase',
-                    letterSpacing: '0.5px',
                   }}
                 >
                   {project.venture}
                 </span>
-
-                {/* Status Indicator */}
                 <div
                   style={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    gap: '6px',
-                    fontSize: '9px',
-                    fontFamily: "'JetBrains Mono', monospace",
-                    color: project.status === 'live' ? '#4CFFB4' : project.status === 'building' ? '#C9A84C' : '#858599',
-                    background: 'rgba(255, 255, 255, 0.02)',
-                    border: `1px solid ${
-                      project.status === 'live' ? 'rgba(76, 255, 180, 0.15)' : project.status === 'building' ? 'rgba(201, 168, 76, 0.15)' : 'rgba(255, 255, 255, 0.05)'
-                    }`,
-                    padding: '3px 8px',
-                    borderRadius: '12px',
+                    color: isSelected ? '#5B4CFF' : '#858599',
+                    transition: 'color 0.3s ease',
                   }}
                 >
-                  <span
-                    style={{
-                      width: '5px',
-                      height: '5px',
-                      borderRadius: '50%',
-                      background: project.status === 'live' ? '#4CFFB4' : project.status === 'building' ? '#C9A84C' : '#858599',
-                      boxShadow: project.status === 'live' ? '0 0 6px #4CFFB4' : project.status === 'building' ? '0 0 6px #C9A84C' : 'none',
-                    }}
-                  />
-                  {project.status === 'live' ? 'LIVE' : project.status === 'building' ? 'DEVELOPING' : 'PLANNED'}
-                </div>
-              </div>
-
-              {/* Title & Icon */}
-              <div
-                style={{
-                  display: 'flex',
-                  alignItems: 'center',
-                  gap: '10px',
-                  marginBottom: '4px',
-                }}
-              >
-                <div style={{ color: isSelected ? '#5B4CFF' : '#858599', display: 'flex', transition: 'color 0.3s' }}>
                   {project.icon}
                 </div>
-                <h3
-                  style={{
-                    fontSize: '18px',
-                    fontWeight: 700,
-                    color: '#ffffff',
-                    margin: 0,
-                    fontFamily: "'Space Grotesk', sans-serif",
-                  }}
-                >
-                  {project.title}
-                </h3>
               </div>
 
-              {/* Desc */}
+              <h3
+                style={{
+                  fontSize: '18px',
+                  fontWeight: 700,
+                  color: '#ffffff',
+                  margin: '0 0 10px 0',
+                  fontFamily: "'Space Grotesk', sans-serif",
+                }}
+              >
+                {project.title}
+              </h3>
               <p
                 style={{
-                  fontSize: '12.5px',
+                  fontSize: '12px',
                   color: '#858599',
-                  lineHeight: 1.55,
-                  margin: '0 0 12px 0',
+                  lineHeight: 1.5,
+                  margin: '0 0 20px 0',
                   fontFamily: "'Inter', sans-serif",
-                  minHeight: '60px',
+                  minHeight: '54px',
                 }}
               >
                 {project.desc}
               </p>
 
-              {/* Tech Badges */}
+              {/* Mini data metrics */}
               <div
                 style={{
                   borderTop: '1px solid rgba(255,255,255,0.03)',
-                  paddingTop: '16px',
+                  paddingTop: '12px',
                   display: 'flex',
+                  flexDirection: 'column',
                   gap: '6px',
-                  flexWrap: 'wrap',
-                  marginTop: 'auto',
                 }}
               >
-                {project.tech.map((t) => (
-                  <span
-                    key={t}
+                {Object.entries(project.metrics).map(([key, val]) => (
+                  <div
+                    key={key}
                     style={{
-                      fontSize: '9px',
+                      display: 'flex',
+                      justifyContent: 'space-between',
+                      fontSize: '10px',
                       fontFamily: "'JetBrains Mono', monospace",
-                      color: isSelected ? '#ffffff' : '#858599',
-                      background: isSelected ? 'rgba(91, 76, 255, 0.08)' : 'rgba(255, 255, 255, 0.02)',
-                      border: isSelected ? '1px solid rgba(91, 76, 255, 0.2)' : '1px solid rgba(255, 255, 255, 0.04)',
-                      padding: '3px 8px',
-                      borderRadius: '4px',
-                      transition: 'all 0.3s ease',
                     }}
                   >
-                    {t}
-                  </span>
+                    <span style={{ color: '#555566', textTransform: 'capitalize' }}>{key}:</span>
+                    <span style={{ color: isSelected ? '#ffffff' : '#858599', transition: 'color 0.3s' }}>
+                      {val}
+                    </span>
+                  </div>
                 ))}
               </div>
             </div>
