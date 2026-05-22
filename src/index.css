@@ -1,0 +1,150 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;600;700&family=Space+Grotesk:wght@500;700;800&display=swap');
+
+:root {
+  --color-bg: #020205;
+  --color-indigo: #6366f1;
+  --color-purple: #a855f7;
+  --color-lavender: #bf55ec;
+  --color-text-muted: #858599;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: #ffffff;
+  font-family: 'Inter', sans-serif;
+  overflow-x: hidden;
+  line-height: 1.5;
+  background-attachment: fixed;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: rgba(2, 2, 5, 0.95);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 3px;
+  border: 1px solid rgba(255, 255, 255, 0.02);
+  transition: background 0.3s;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, var(--color-indigo), var(--color-purple));
+}
+
+/* DOM Layout Layering */
+.app-container {
+  position: relative;
+  width: 100%;
+}
+
+.content-layer {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  pointer-events: none; /* Let scroll pass to the Canvas */
+}
+
+/* Scroll Section Heights */
+.scroll-section {
+  min-height: 100vh;
+  width: 100%;
+  position: relative;
+}
+
+/* Animations */
+@keyframes scrollLinePulse {
+  0% {
+    transform: scaleY(0.4) translateX(-50%);
+    opacity: 0.2;
+    transform-origin: top;
+  }
+  50% {
+    transform: scaleY(1.2) translateX(-50%);
+    opacity: 0.8;
+    transform-origin: top;
+  }
+  100% {
+    transform: scaleY(0.4) translateX(-50%);
+    opacity: 0.2;
+    transform-origin: top;
+  }
+}
+
+/* Interactive Elements Hover overrides */
+.form-input:focus {
+  border-color: rgba(0, 243, 255, 0.4) !important;
+  box-shadow: 0 0 10px rgba(0, 243, 255, 0.1);
+}
+
+.venture-card:hover {
+  border-color: rgba(255, 255, 255, 0.08) !important;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
+}
+
+.venture-card:hover .card-glow {
+  opacity: 0.85 !important;
+}
+
+.submit-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 243, 255, 0.35);
+}
+
+.submit-btn:active {
+  transform: translateY(0);
+}
+
+/* Loader custom keyframes */
+@keyframes scaleIn {
+  0% {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Custom interactive cursor */
+.custom-cursor {
+  width: 20px;
+  height: 20px;
+  border: 1px solid rgba(99, 102, 241, 0.5);
+  border-radius: 50%;
+  position: fixed;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 9999;
+  mix-blend-mode: difference;
+  transition: width 0.3s ease, height 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.custom-cursor-dot {
+  width: 4px;
+  height: 4px;
+  background-color: var(--color-indigo);
+  border-radius: 50%;
+  position: fixed;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 9999;
+  mix-blend-mode: difference;
+}
+
+/* Scale cursor on hover */
+.hover-active .custom-cursor {
+  width: 40px;
+  height: 40px;
+  background-color: rgba(99, 102, 241, 0.05);
+  border-color: rgba(99, 102, 241, 1);
+}
