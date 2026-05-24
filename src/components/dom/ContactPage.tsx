@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useRouteStore } from '../../stores/routeStore';
-import { ArrowLeft, Send, ArrowRight, ShieldCheck, Mail, MapPin, Globe } from 'lucide-react';
+import { ArrowLeft, Send, ArrowRight, ShieldCheck, MapPin, Globe } from 'lucide-react';
 import { Footer } from './Footer';
 
 export function ContactPage() {
@@ -44,7 +44,6 @@ export function ContactPage() {
           onClick={() => setRoute('home')}
           style={{
             background: 'none',
-            border: 'none',
             color: '#858599',
             fontFamily: "'JetBrains Mono', monospace",
             fontSize: '11px',

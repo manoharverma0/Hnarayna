@@ -1,5 +1,5 @@
 import { useRouteStore } from '../../stores/routeStore';
-import { ArrowLeft, Cpu, Shield, Dna, Layers, Terminal, Sparkles } from 'lucide-react';
+import { ArrowLeft, Cpu, Shield, Terminal, Sparkles } from 'lucide-react';
 import { Footer } from './Footer';
 
 export function About() {
@@ -30,7 +30,6 @@ export function About() {
           onClick={() => setRoute('home')}
           style={{
             background: 'none',
-            border: 'none',
             color: '#858599',
             fontFamily: "'JetBrains Mono', monospace",
             fontSize: '11px',

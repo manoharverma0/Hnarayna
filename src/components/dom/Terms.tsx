@@ -30,7 +30,6 @@ export function Terms() {
           onClick={() => setRoute('home')}
           style={{
             background: 'none',
-            border: 'none',
             color: '#858599',
             fontFamily: "'JetBrains Mono', monospace",
             fontSize: '11px',
