@@ -1,6 +1,6 @@
 import { create } from 'zustand';
 
-export type Route = 'home' | 'about' | 'contact' | 'privacy' | 'terms';
+export type Route = 'home' | 'about' | 'contact' | 'privacy' | 'terms' | 'deletion';
 
 interface RouteState {
   currentRoute: Route;
@@ -13,6 +13,7 @@ export function getRouteFromHash(): Route {
   if (hash === '#/contact' || hash === '#contact') return 'contact';
   if (hash === '#/privacy' || hash === '#privacy') return 'privacy';
   if (hash === '#/terms' || hash === '#terms') return 'terms';
+  if (hash === '#/deletion' || hash === '#deletion') return 'deletion';
   return 'home';
 }
 

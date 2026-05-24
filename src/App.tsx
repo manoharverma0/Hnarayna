@@ -9,6 +9,7 @@ import { About } from './components/dom/About';
 import { ContactPage } from './components/dom/ContactPage';
 import { PrivacyPolicy } from './components/dom/PrivacyPolicy';
 import { Terms } from './components/dom/Terms';
+import { DataDeletion } from './components/dom/DataDeletion';
 import Lenis from 'lenis';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -124,6 +125,7 @@ export default function App() {
       {currentRoute === 'contact' && <ContactPage />}
       {currentRoute === 'privacy' && <PrivacyPolicy />}
       {currentRoute === 'terms' && <Terms />}
+      {currentRoute === 'deletion' && <DataDeletion />}
     </div>
   );
 }

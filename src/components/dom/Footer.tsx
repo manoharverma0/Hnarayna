@@ -3,7 +3,7 @@ import { useRouteStore } from '../../stores/routeStore';
 export function Footer() {
   const { setRoute } = useRouteStore();
 
-  const handleLink = (route: 'home' | 'about' | 'contact' | 'privacy' | 'terms') => {
+  const handleLink = (route: 'home' | 'about' | 'contact' | 'privacy' | 'terms' | 'deletion') => {
     setRoute(route);
   };
 
@@ -131,6 +131,14 @@ export function Footer() {
               style={btnStyle}
             >
               Terms of Accord
+            </button>
+            <button
+              onClick={() => handleLink('deletion')}
+              onMouseEnter={handleMouseEnter}
+              onMouseLeave={handleMouseLeave}
+              style={btnStyle}
+            >
+              Data Deletion
             </button>
           </div>
         </div>
