@@ -1,12 +1,14 @@
 import { useEffect } from 'react';
 import { useSceneStore } from './stores/sceneStore';
+import { useRouteStore } from './stores/routeStore';
 import { Scene } from './components/canvas/Scene';
 import { Loader } from './components/dom/Loader';
 import { Navbar } from './components/dom/Navbar';
-import { Hero } from './components/dom/Hero';
-import { Ventures } from './components/dom/Ventures';
-import { Projects } from './components/dom/Projects';
-import { Contact } from './components/dom/Contact';
+import { LandingPage } from './components/dom/LandingPage';
+import { About } from './components/dom/About';
+import { ContactPage } from './components/dom/ContactPage';
+import { PrivacyPolicy } from './components/dom/PrivacyPolicy';
+import { Terms } from './components/dom/Terms';
 import Lenis from 'lenis';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -14,6 +16,8 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 gsap.registerPlugin(ScrollTrigger);
 
 export default function App() {
+  const currentRoute = useRouteStore((state) => state.currentRoute);
+
   useEffect(() => {
     // 1. Initialize Lenis Smooth Scroll
     const lenis = new Lenis({
@@ -50,61 +54,7 @@ export default function App() {
     };
     window.addEventListener('mousemove', handleMouseMove, { passive: true });
 
-    // 3. Coordinate GSAP ScrollTrigger timeline
-    const scrollCtx = gsap.context(() => {
-      // Track total scroll progress across the document body
-      ScrollTrigger.create({
-        trigger: document.body,
-        start: 'top top',
-        end: 'bottom bottom',
-        scrub: 1.0,
-        onUpdate: (self) => {
-          useSceneStore.setState({
-            scrollProgress: self.progress,
-            scrollVelocity: Math.abs(self.getVelocity() / 1000),
-          });
-        },
-      });
-
-      // Track active section changes on entering viewport centers
-      const sections = ['#chapter-1', '#chapter-2', '#chapter-3', '#chapter-4'];
-      sections.forEach((sel, i) => {
-        ScrollTrigger.create({
-          trigger: sel,
-          start: 'top center',
-          end: 'bottom center',
-          onToggle: (self) => {
-            if (self.isActive) {
-              useSceneStore.setState({ activeSection: i });
-            }
-          },
-        });
-      });
-
-      // DOM Scroll Reveals for Chapters 2 to 4
-      ['#chapter-2', '#chapter-3', '#chapter-4'].forEach((sel) => {
-        const revealElements = document.querySelectorAll(`${sel} .reveal-fade`);
-        if (revealElements.length > 0) {
-          gsap.fromTo(revealElements,
-            { opacity: 0, y: 40 },
-            {
-              opacity: 1,
-              y: 0,
-              duration: 1.0,
-              stagger: 0.15,
-              ease: 'power3.out',
-              scrollTrigger: {
-                trigger: sel,
-                start: 'top 75%',
-                toggleActions: 'play none none reverse',
-              }
-            }
-          );
-        }
-      });
-    });
-
-    // 4. Cursor hover adjustments
+    // 3. Cursor hover adjustments
     const handleMouseOver = (e: MouseEvent) => {
       const target = e.target as HTMLElement;
       const isInteractive =
@@ -125,14 +75,33 @@ export default function App() {
     };
     window.addEventListener('mouseover', handleMouseOver);
 
+    // Store lenis globally on window so we can scroll to top on routing
+    (window as any).lenisInstance = lenis;
+
     return () => {
       gsap.ticker.remove(updateLenis);
       lenis.destroy();
       window.removeEventListener('mousemove', handleMouseMove);
       window.removeEventListener('mouseover', handleMouseOver);
-      scrollCtx.revert();
+      delete (window as any).lenisInstance;
     };
   }, []);
+
+  // Listen for route changes to refresh scroll layout and position
+  useEffect(() => {
+    window.scrollTo(0, 0);
+    const lenis = (window as any).lenisInstance;
+    if (lenis) {
+      lenis.scrollTo(0, { immediate: true });
+    }
+    
+    // Allow React to commit layout, then refresh ScrollTrigger
+    const timeout = setTimeout(() => {
+      ScrollTrigger.refresh();
+    }, 150);
+
+    return () => clearTimeout(timeout);
+  }, [currentRoute]);
 
   return (
     <div className="app-container">
@@ -149,21 +118,12 @@ export default function App() {
       {/* Immersive 3D Scene Background */}
       <Scene />
 
-      {/* Scrolling DOM Chapters */}
-      <main className="content-layer">
-        <section id="chapter-1" className="scroll-section">
-          <Hero />
-        </section>
-        <section id="chapter-2" className="scroll-section">
-          <Ventures />
-        </section>
-        <section id="chapter-3" className="scroll-section">
-          <Projects />
-        </section>
-        <section id="chapter-4" className="scroll-section">
-          <Contact />
-        </section>
-      </main>
+      {/* Dynamic Content Routing */}
+      {currentRoute === 'home' && <LandingPage />}
+      {currentRoute === 'about' && <About />}
+      {currentRoute === 'contact' && <ContactPage />}
+      {currentRoute === 'privacy' && <PrivacyPolicy />}
+      {currentRoute === 'terms' && <Terms />}
     </div>
   );
 }

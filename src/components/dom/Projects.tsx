@@ -28,11 +28,11 @@ export function Projects() {
       metrics: { models: 'AlphaFold-X', accuracy: '98.4%', speed: '600x faster' },
     },
     {
-      title: 'Spectra Guard',
-      venture: 'Spectra Cyber',
-      desc: 'Intelligent network monitoring agents utilizing predictive security heuristics to preempt vector attacks.',
+      title: 'MetaDev Flow',
+      venture: 'Aetheris AI',
+      desc: 'Autonomous agent pipelines automating Meta developer app registration, Graph API scope configuration, and webhook relays.',
       icon: <Activity size={18} />,
-      metrics: { threatsBlocked: '4.8M+', responseTime: '80ms', falsePositives: '0.001%' },
+      metrics: { appsCreated: '1,420+', webhookLatency: '12ms', autoScopeSync: 'Active' },
     },
   ];
 

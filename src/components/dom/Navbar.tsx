@@ -1,16 +1,45 @@
 import { useSceneStore } from '../../stores/sceneStore';
+import { useRouteStore } from '../../stores/routeStore';
 
 export function Navbar() {
   const activeSection = useSceneStore((state) => state.activeSection);
+  const { currentRoute, setRoute } = useRouteStore();
 
-  const scrollToSection = (index: number) => {
-    const el = document.getElementById(`chapter-${index + 1}`);
-    if (el) {
-      el.scrollIntoView({ behavior: 'smooth' });
+  const handleNavClick = (item: string, index: number) => {
+    if (item === 'About App') {
+      setRoute('about');
+    } else if (item === 'Contact') {
+      setRoute('contact');
+    } else {
+      if (currentRoute !== 'home') {
+        setRoute('home');
+        // Give time for the home sections to mount in DOM
+        setTimeout(() => {
+          const el = document.getElementById(`chapter-${index + 1}`);
+          if (el) {
+            el.scrollIntoView({ behavior: 'smooth' });
+          }
+        }, 150);
+      } else {
+        const el = document.getElementById(`chapter-${index + 1}`);
+        if (el) {
+          el.scrollIntoView({ behavior: 'smooth' });
+        }
+      }
     }
   };
 
-  const navItems = ['Singularity', 'Mitosis', 'Ecosystem', 'Horizon'];
+  const handleLogoClick = () => {
+    setRoute('home');
+    if (currentRoute === 'home') {
+      const el = document.getElementById('chapter-1');
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  };
+
+  const navItems = ['Singularity', 'Mitosis', 'Ecosystem', 'About App', 'Contact'];
 
   return (
     <nav
@@ -30,7 +59,7 @@ export function Navbar() {
     >
       {/* Logo */}
       <div
-        onClick={() => scrollToSection(0)}
+        onClick={handleLogoClick}
         style={{
           color: '#ffffff',
           fontWeight: 700,
@@ -64,11 +93,19 @@ export function Navbar() {
         }}
       >
         {navItems.map((item, index) => {
-          const isActive = activeSection === index;
+          let isActive = false;
+          if (item === 'About App') {
+            isActive = currentRoute === 'about';
+          } else if (item === 'Contact') {
+            isActive = currentRoute === 'contact';
+          } else {
+            isActive = currentRoute === 'home' && activeSection === index;
+          }
+
           return (
             <button
               key={item}
-              onClick={() => scrollToSection(index)}
+              onClick={() => handleNavClick(item, index)}
               style={{
                 background: 'none',
                 border: 'none',
