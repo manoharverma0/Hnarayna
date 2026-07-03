@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy - Hnarayna MetaDev</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=JetBrains+Mono:wght@400;700&family=Space+Grotesk:wght@500;700;800&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background: #020205;
+      color: #ffffff;
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      padding: 80px 24px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+      box-sizing: border-box;
+    }
+    .container {
+      max-width: 800px;
+      width: 100%;
+    }
+    .header {
+      margin-bottom: 48px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      padding-bottom: 32px;
+    }
+    .protocol-tag {
+      font-size: 10px;
+      font-family: 'JetBrains Mono', monospace;
+      color: #4cffb4;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      font-weight: bold;
+      display: block;
+      margin-bottom: 12px;
+    }
+    h1 {
+      font-size: calc(2.0rem + 1.2vw);
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: -1.5px;
+      margin: 0 0 16px 0;
+      font-family: 'Space Grotesk', sans-serif;
+      background: linear-gradient(135deg, #ffffff 0%, #a3a3b8 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .cycles-info {
+      font-size: 13px;
+      font-family: 'JetBrains Mono', monospace;
+      color: #858599;
+      margin: 0;
+    }
+    .content {
+      display: flex;
+      flex-direction: column;
+      gap: 36px;
+      font-size: 15px;
+      color: #a3a3b8;
+      line-height: 1.7;
+    }
+    section h2 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 18px;
+      color: #ffffff;
+      margin-bottom: 14px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    section h2 span.icon {
+      color: #5b4cff;
+    }
+    ul {
+      padding-left: 20px;
+      margin-top: 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    strong {
+      color: #ffffff;
+    }
+    .footer {
+      margin-top: 80px;
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+      padding-top: 32px;
+      text-align: center;
+      font-size: 12px;
+      color: #858599;
+      font-family: 'JetBrains Mono', monospace;
+    }
+    a {
+      color: #5b4cff;
+      text-decoration: none;
+      font-family: 'JetBrains Mono', monospace;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <span class="protocol-tag">Security protocol // legal compliance</span>
+      <h1>Privacy Directive</h1>
+      <p class="cycles-info">EFFECTIVE CYCLES: 2026.05.24 // VERSION 2.0.1</p>
+    </div>
+
+    <div class="content">
+      <section>
+        <h2><span class="icon">🔒</span> 1. Meta Developer App Token Protocol</h2>
+        <p>
+          Hnarayna Ventures processes credentials and telemetry files strictly necessary to configure and deploy Meta Developer Apps. We operate within compliance criteria of Meta Platforms, Inc.
+        </p>
+        <ul>
+          <li>
+            <strong>App Secrets & Client Tokens:</strong> Saved locally in browser storage or encrypted dynamically in our secure vaults using client-managed keys. We never inspect or store plain-text keys on central databases.
+          </li>
+          <li>
+            <strong>Graph API Telemetry:</strong> Logged parameters containing request scopes (e.g., whatsapp_business_messaging, instagram_basic) and rate limit indicators to facilitate performance tuning.
+          </li>
+          <li>
+            <strong>Relayed Webhook Payloads:</strong> Webhook signals (WhatsApp message updates, Facebook Lead Ads JSONs) are routed with instant TLS tunneling and processed in-memory. Hnarayna does not retain webhook logs unless specifically configured by the client developer.
+          </li>
+        </ul>
+      </section>
+
+      <section>
+        <h2><span class="icon">👁️</span> 2. Processing & Security Measures</h2>
+        <p>
+          Meta Dev credentials and webhook logs are transmitted exclusively over secure HTTPS channels and subjected to periodic rotation audits. 
+        </p>
+        <p>
+          We do not share your Graph API telemetry, application client configurations, or Meta credentials with external data aggregates. Telemetry exists solely to maintain connection up-time and auto-verify webhooks with developers.facebook.com endpoints.
+        </p>
+      </section>
+
+      <section>
+        <h2><span class="icon">📝</span> 3. Developer Portal Analytics</h2>
+        <p>
+          Our dashboard stores local session variables to preserve active Meta App IDs, current scopes, and styling parameters. We do not inject user tracking SDKs or track your activity across other websites.
+        </p>
+      </section>
+
+      <section>
+        <h2><span class="icon">✅</span> 4. Credential De-Provisioning</h2>
+        <p>
+          Developers can de-authorize Hnarayna at any time. Simply use the de-provisioning portal in the dashboard to purge all cached keys, or transmit a signed request to <a href="mailto:gateway@hnarayna.ventures">gateway@hnarayna.ventures</a>.
+        </p>
+      </section>
+    </div>
+
+    <div class="footer">
+      © 2026 Hnarayna Ventures. All rights reserved.
+    </div>
+  </div>
+</body>
+</html>
