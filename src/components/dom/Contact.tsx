@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { ArrowRight, Send } from 'lucide-react';
 
 export function Contact() {
-  const [form, setForm] = useState({ name: '', email: '', company: 'Parent', details: '' });
+  const [form, setForm] = useState({ name: '', email: '', type: 'SaaS', details: '' });
   const [submitted, setSubmitted] = useState(false);
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -11,7 +11,7 @@ export function Contact() {
       setSubmitted(true);
       setTimeout(() => {
         setSubmitted(false);
-        setForm({ name: '', email: '', company: 'Parent', details: '' });
+        setForm({ name: '', email: '', type: 'SaaS', details: '' });
       }, 3000);
     }
   };
@@ -55,7 +55,7 @@ export function Contact() {
             }}
             className="reveal-fade"
           >
-            Chapter 04 // Horizon
+            Chapter 04 // Consultation
           </span>
           <h2
             style={{
@@ -70,19 +70,19 @@ export function Contact() {
             }}
             className="reveal-fade"
           >
-            Enter the Event Horizon
+            Start a project
           </h2>
           <p
             style={{
               fontSize: 'calc(0.85rem + 0.15vw)',
               fontFamily: "'Inter', sans-serif",
-              color: '#858599',
+              color: '#a1a1aa',
               lineHeight: 1.6,
               margin: '0 0 32px 0',
             }}
             className="reveal-fade"
           >
-            Whether you are launching a child company, seeking incubation for an active project, or want to collaborate with Hnarayna Labs, our gravitational pull is ready to accelerate your trajectory.
+            Let's turn your product ideas into reliable engineering. We work with founders and operations teams to scope, design, and deploy custom software.
           </p>
 
           <div
@@ -92,18 +92,18 @@ export function Contact() {
               gap: '16px',
               fontFamily: "'JetBrains Mono', monospace",
               fontSize: '12px',
-              color: '#a3a3b8',
+              color: '#a1a1aa',
             }}
             className="reveal-fade"
           >
             <div>
-              <span style={{ color: '#5B4CFF' }}>▸ LOCATION:</span> Orbiting Coordinate [0x8A9E]
+              <span style={{ color: '#5B4CFF' }}>▸ LOCATION:</span> Indore, India / Remote
             </div>
             <div>
-              <span style={{ color: '#C9A84C' }}>▸ EMAIL:</span> gateway@hnarayna.ventures
+              <span style={{ color: '#C9A84C' }}>▸ EMAIL:</span> vermanikhil03278@gmail.com
             </div>
             <div>
-              <span style={{ color: '#4CFFB4' }}>▸ NET:</span> hnarayna.ventures
+              <span style={{ color: '#4CFFB4' }}>▸ HUB:</span> hnarayna.space
             </div>
           </div>
         </div>
@@ -149,9 +149,9 @@ export function Contact() {
               >
                 <Send size={18} />
               </div>
-              <h3 style={{ fontSize: '20px', color: '#ffffff', margin: '0 0 8px 0' }}>Transmission Confirmed</h3>
-              <p style={{ fontSize: '13px', color: '#858599', fontFamily: "'Inter', sans-serif", margin: 0 }}>
-                Your project parameters have been uploaded. We will align vector paths shortly.
+              <h3 style={{ fontSize: '20px', color: '#ffffff', margin: '0 0 8px 0' }}>Inquiry Received</h3>
+              <p style={{ fontSize: '13px', color: '#a1a1aa', fontFamily: "'Inter', sans-serif", margin: 0 }}>
+                We have logged your parameters. Our engineering lead will get in touch with you shortly.
               </p>
             </div>
           ) : (
@@ -159,8 +159,8 @@ export function Contact() {
               <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap' }}>
                 {/* Name */}
                 <div style={{ flex: '1', minWidth: '180px', display: 'flex', flexDirection: 'column', gap: '6px' }}>
-                  <label style={{ fontSize: '10px', fontFamily: "'JetBrains Mono', monospace", color: '#858599', textTransform: 'uppercase' }}>
-                    Identity / Name
+                  <label style={{ fontSize: '10px', fontFamily: "'JetBrains Mono', monospace", color: '#a1a1aa', textTransform: 'uppercase' }}>
+                    Full Name
                   </label>
                   <input
                     type="text"
@@ -184,8 +184,8 @@ export function Contact() {
 
                 {/* Email */}
                 <div style={{ flex: '1', minWidth: '180px', display: 'flex', flexDirection: 'column', gap: '6px' }}>
-                  <label style={{ fontSize: '10px', fontFamily: "'JetBrains Mono', monospace", color: '#858599', textTransform: 'uppercase' }}>
-                    Secure Email
+                  <label style={{ fontSize: '10px', fontFamily: "'JetBrains Mono', monospace", color: '#a1a1aa', textTransform: 'uppercase' }}>
+                    Work Email
                   </label>
                   <input
                     type="email"
@@ -208,17 +208,17 @@ export function Contact() {
                 </div>
               </div>
 
-              {/* Division Selection */}
+              {/* Project Type */}
               <div style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
-                <label style={{ fontSize: '10px', fontFamily: "'JetBrains Mono', monospace", color: '#858599', textTransform: 'uppercase' }}>
-                  Target Alignment Vector
+                <label style={{ fontSize: '10px', fontFamily: "'JetBrains Mono', monospace", color: '#a1a1aa', textTransform: 'uppercase' }}>
+                  Project Type
                 </label>
                 <select
-                  value={form.company}
-                  onChange={(e) => setForm({ ...form, company: e.target.value })}
+                  value={form.type}
+                  onChange={(e) => setForm({ ...form, type: e.target.value })}
                   style={{
                     background: '#0a0a14',
-                    border: '1px solid rgba(255,255,255,0.06)',
+                    border: '1px solid rgba(255, 255, 255, 0.06)',
                     borderRadius: '8px',
                     padding: '12px 16px',
                     color: '#ffffff',
@@ -228,22 +228,23 @@ export function Contact() {
                     cursor: 'pointer',
                   }}
                 >
-                  <option value="Parent">Hnarayna Ventures (General)</option>
-                  <option value="AI">Aetheris AI (Artificial Intelligence)</option>
-                  <option value="Cyber">Spectra Cyber (Information Security)</option>
-                  <option value="Bio">Helix Bio (Bio-Computing)</option>
+                  <option value="SaaS">SaaS Product Development</option>
+                  <option value="Custom Software">Custom Web/Mobile App</option>
+                  <option value="Automation">Business Workflow Automation</option>
+                  <option value="CRM-ERP">Tailored ERP or CRM System</option>
+                  <option value="Consulting">Digital Consulting & Support</option>
                 </select>
               </div>
 
               {/* Project Details */}
               <div style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
-                <label style={{ fontSize: '10px', fontFamily: "'JetBrains Mono', monospace", color: '#858599', textTransform: 'uppercase' }}>
-                  Project Parameters / Details
+                <label style={{ fontSize: '10px', fontFamily: "'JetBrains Mono', monospace", color: '#a1a1aa', textTransform: 'uppercase' }}>
+                  Brief description of the challenge
                 </label>
                 <textarea
                   rows={4}
                   required
-                  placeholder="Outline your tech project, idea, or collaboration parameters..."
+                  placeholder="Outline the operational processes, custom app features, or dashboard parameters you need..."
                   value={form.details}
                   onChange={(e) => setForm({ ...form, details: e.target.value })}
                   style={{
@@ -260,6 +261,7 @@ export function Contact() {
                     transition: 'border-color 0.3s',
                   }}
                   className="form-input"
+                  id="contact-details-field"
                 />
               </div>
 
@@ -267,7 +269,7 @@ export function Contact() {
               <button
                 type="submit"
                 style={{
-                  background: 'linear-gradient(90deg, #5B4CFF, #C9A84C)',
+                  background: 'linear-gradient(90deg, #5B4CFF, #4CFFB4)',
                   border: 'none',
                   borderRadius: '8px',
                   padding: '14px 28px',
@@ -287,7 +289,7 @@ export function Contact() {
                 }}
                 className="submit-btn"
               >
-                Establish Link <ArrowRight size={14} />
+                Submit Inquiry <ArrowRight size={14} />
               </button>
             </form>
           )}

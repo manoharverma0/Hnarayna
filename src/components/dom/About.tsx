@@ -12,7 +12,7 @@ export function About() {
         zIndex: 20,
         width: '100%',
         minHeight: '100vh',
-        background: 'rgba(2, 2, 5, 0.95)',
+        background: 'rgba(3, 3, 3, 0.95)',
         backdropFilter: 'blur(20px)',
         WebkitBackdropFilter: 'blur(20px)',
         pointerEvents: 'auto',
@@ -30,7 +30,7 @@ export function About() {
           onClick={() => setRoute('home')}
           style={{
             background: 'none',
-            color: '#858599',
+            color: '#a1a1aa',
             fontFamily: "'JetBrains Mono', monospace",
             fontSize: '11px',
             textTransform: 'uppercase',
@@ -49,15 +49,13 @@ export function About() {
           onMouseEnter={(e) => {
             e.currentTarget.style.color = '#5B4CFF';
             e.currentTarget.style.borderColor = 'rgba(91, 76, 255, 0.3)';
-            e.currentTarget.style.boxShadow = '0 0 15px rgba(91, 76, 255, 0.1)';
           }}
           onMouseLeave={(e) => {
-            e.currentTarget.style.color = '#858599';
+            e.currentTarget.style.color = '#a1a1aa';
             e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.05)';
-            e.currentTarget.style.boxShadow = 'none';
           }}
         >
-          <ArrowLeft size={14} /> Back to Nexus
+          <ArrowLeft size={14} /> Back to Hub
         </button>
 
         {/* Title Section */}
@@ -74,7 +72,7 @@ export function About() {
               marginBottom: '12px',
             }}
           >
-            Product Suite // Meta Dev Engine
+            Engineering Group // Profile
           </span>
           <h1
             style={{
@@ -86,27 +84,27 @@ export function About() {
               color: '#ffffff',
               margin: '0 0 24px 0',
               fontFamily: "'Space Grotesk', sans-serif",
-              background: 'linear-gradient(135deg, #ffffff 0%, #a3a3b8 100%)',
+              background: 'linear-gradient(135deg, #ffffff 0%, #a1a1aa 100%)',
               WebkitBackgroundClip: 'text',
               WebkitTextFillColor: 'transparent',
             }}
           >
-            Meta Developer App Creation Engine
+            Engineering stable software that lasts
           </h1>
           <p
             style={{
               fontSize: '18px',
-              color: '#a3a3b8',
+              color: '#a1a1aa',
               lineHeight: 1.6,
               maxWidth: '750px',
               fontWeight: 400,
             }}
           >
-            Hnarayna MetaDev is a premium developer tool built to automate the creation, authorization, and deployment of Meta Developer Apps. Skip the complex configurations of developers.facebook.com and instantiate your integrations in one click.
+            Hnarayna is a software engineering and product studio built around a simple principle: we solve complex business problems through clean, robust technology. We don't sell marketing hype; we write code that drives operations.
           </p>
         </div>
 
-        {/* Feature Grid */}
+        {/* Core Values / Focus */}
         <div style={{ display: 'flex', flexDirection: 'column', gap: '32px', marginBottom: '80px' }}>
           <h2
             style={{
@@ -119,7 +117,7 @@ export function About() {
               color: '#ffffff',
             }}
           >
-            Meta Integration Pipelines
+            Our Core Principles
           </h2>
 
           <div
@@ -129,11 +127,11 @@ export function About() {
               gap: '24px',
             }}
           >
-            {/* Feature 1 */}
+            {/* Value 1 */}
             <div
               style={{
-                background: 'rgba(255, 255, 255, 0.02)',
-                border: '1px solid rgba(255, 255, 255, 0.04)',
+                background: 'rgba(255, 255, 255, 0.01)',
+                border: '1px solid rgba(255, 255, 255, 0.03)',
                 borderRadius: '16px',
                 padding: '32px',
                 transition: 'all 0.3s ease',
@@ -143,24 +141,24 @@ export function About() {
                 e.currentTarget.style.transform = 'translateY(-4px)';
               }}
               onMouseLeave={(e) => {
-                e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.04)';
+                e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.03)';
                 e.currentTarget.style.transform = 'translateY(0)';
               }}
             >
               <div style={{ color: '#5B4CFF', marginBottom: '20px' }}>
                 <Cpu size={32} />
               </div>
-              <h3 style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: '20px', marginBottom: '12px' }}>One-Click App Init</h3>
-              <p style={{ fontSize: '14px', color: '#858599', lineHeight: 1.6 }}>
-                Instantly trigger Meta App creation (Business, Consumer, or Gaming templates). Automatically register your App ID and securely download the generated credentials.
+              <h3 style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: '20px', marginBottom: '12px' }}>Engineers First</h3>
+              <p style={{ fontSize: '14px', color: '#a1a1aa', lineHeight: 1.6 }}>
+                We believe in writing type-safe code, normalizing database relationships, and structuring cloud architectures to scale. Our developers understand the details of every API loop we write.
               </p>
             </div>
 
-            {/* Feature 2 */}
+            {/* Value 2 */}
             <div
               style={{
-                background: 'rgba(255, 255, 255, 0.02)',
-                border: '1px solid rgba(255, 255, 255, 0.04)',
+                background: 'rgba(255, 255, 255, 0.01)',
+                border: '1px solid rgba(255, 255, 255, 0.03)',
                 borderRadius: '16px',
                 padding: '32px',
                 transition: 'all 0.3s ease',
@@ -170,24 +168,24 @@ export function About() {
                 e.currentTarget.style.transform = 'translateY(-4px)';
               }}
               onMouseLeave={(e) => {
-                e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.04)';
+                e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.03)';
                 e.currentTarget.style.transform = 'translateY(0)';
               }}
             >
               <div style={{ color: '#C9A84C', marginBottom: '20px' }}>
                 <Terminal size={32} />
               </div>
-              <h3 style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: '20px', marginBottom: '12px' }}>Webhook Automation</h3>
-              <p style={{ fontSize: '14px', color: '#858599', lineHeight: 1.6 }}>
-                Automatically deploy secure, TLS-certified webhook servers. Register callback URLs and subscription fields (messages, feed, leadgen) with Meta in seconds.
+              <h3 style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: '20px', marginBottom: '12px' }}>Real SaaS Experience</h3>
+              <p style={{ fontSize: '14px', color: '#a1a1aa', lineHeight: 1.6 }}>
+                We actively build and manage our own software products, like Coach CRM. This gives us operational empathy, making us focus on maintainability, client support, and clean scaling.
               </p>
             </div>
 
-            {/* Feature 3 */}
+            {/* Value 3 */}
             <div
               style={{
-                background: 'rgba(255, 255, 255, 0.02)',
-                border: '1px solid rgba(255, 255, 255, 0.04)',
+                background: 'rgba(255, 255, 255, 0.01)',
+                border: '1px solid rgba(255, 255, 255, 0.03)',
                 borderRadius: '16px',
                 padding: '32px',
                 transition: 'all 0.3s ease',
@@ -197,25 +195,25 @@ export function About() {
                 e.currentTarget.style.transform = 'translateY(-4px)';
               }}
               onMouseLeave={(e) => {
-                e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.04)';
+                e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.03)';
                 e.currentTarget.style.transform = 'translateY(0)';
               }}
             >
               <div style={{ color: '#4CFFB4', marginBottom: '20px' }}>
                 <Shield size={32} />
               </div>
-              <h3 style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: '20px', marginBottom: '12px' }}>Credential Vaulting</h3>
-              <p style={{ fontSize: '14px', color: '#858599', lineHeight: 1.6 }}>
-                Keep your Meta App Secret, Client Token, and System User Access Tokens locked under client-side, quantum-resistant encryption parameters.
+              <h3 style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: '20px', marginBottom: '12px' }}>Value-Driven AI</h3>
+              <p style={{ fontSize: '14px', color: '#a1a1aa', lineHeight: 1.6 }}>
+                AI is a tool, not our identity. We integrate biometric scanning and background removal algorithms only where they add concrete, measurable efficiency to your digital operations.
               </p>
             </div>
           </div>
         </div>
 
-        {/* Step-by-Step Dashboard Guide */}
+        {/* Operational Lifecycle */}
         <div
           style={{
-            background: 'linear-gradient(135deg, rgba(91, 76, 255, 0.03) 0%, rgba(201, 168, 76, 0.03) 100%)',
+            background: 'linear-gradient(135deg, rgba(91, 76, 255, 0.03) 0%, rgba(76, 255, 180, 0.03) 100%)',
             border: '1px solid rgba(255, 255, 255, 0.05)',
             borderRadius: '20px',
             padding: '40px',
@@ -226,10 +224,10 @@ export function About() {
             <div style={{ color: '#5B4CFF' }}>
               <Sparkles size={24} />
             </div>
-            <h2 style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: '20px', margin: 0 }}>Operational Lifecycle</h2>
+            <h2 style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: '20px', margin: 0 }}>Partnership Standards</h2>
           </div>
-          <p style={{ fontSize: '15px', color: '#a3a3b8', lineHeight: 1.6, marginBottom: '28px' }}>
-            Our console guides you from initial Meta Developer registration through full Graph API production release.
+          <p style={{ fontSize: '15px', color: '#a1a1aa', lineHeight: 1.6, marginBottom: '28px' }}>
+            We work with startups, SMEs, and large enterprises looking for technical excellence and dedicated long-term product support.
           </p>
 
           <div
@@ -242,22 +240,22 @@ export function About() {
             }}
           >
             <div>
-              <span style={{ color: '#5B4CFF', display: 'block', marginBottom: '8px' }}>01 / INITIALIZE</span>
-              • Connect Meta Dev Profile<br />
-              • Select Target API Type<br />
-              • Spin Up App Blueprint
+              <span style={{ color: '#5B4CFF', display: 'block', marginBottom: '8px' }}>01 / PARTNER</span>
+              • Tailored Scoping Sheets<br />
+              • Defined Technical Milestones<br />
+              • Regular Progress Demos
             </div>
             <div>
-              <span style={{ color: '#C9A84C', display: 'block', marginBottom: '8px' }}>02 / CONFIGURE</span>
-              • Auto-Generate Webhooks<br />
-              • Enable Graph API Scopes<br />
-              • Verify SSL Callbacks
+              <span style={{ color: '#C9A84C', display: 'block', marginBottom: '8px' }}>02 / BUILD</span>
+              • Clean, Type-Safe Codebases<br />
+              • Robust Local testing<br />
+              • Modular Component Systems
             </div>
             <div>
-              <span style={{ color: '#4CFFB4', display: 'block', marginBottom: '8px' }}>03 / PRODUCTION</span>
-              • Request App Review<br />
-              • Switch to Live Mode<br />
-              • Monitor System Limits
+              <span style={{ color: '#4CFFB4', display: 'block', marginBottom: '8px' }}>03 / SCALE</span>
+              • Automatic Cloud CI/CD<br />
+              • Telemetry Error Logs<br />
+              • Long-Term Support
             </div>
           </div>
         </div>

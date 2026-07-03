@@ -1,11 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;600;700&family=Space+Grotesk:wght@500;700;800&display=swap');
 
 :root {
-  --color-bg: #020205;
+  --color-bg: #030303;
   --color-indigo: #5B4CFF;
-  --color-purple: #C9A84C;
-  --color-lavender: #4CFFB4;
-  --color-text-muted: #858599;
+  --color-amber: #C9A84C;
+  --color-mint: #4CFFB4;
+  --color-text-muted: #a1a1aa;
+  --color-border: rgba(255, 255, 255, 0.07);
 }
 
 * {

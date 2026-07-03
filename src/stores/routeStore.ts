@@ -1,6 +1,6 @@
 import { create } from 'zustand';
 
-export type Route = 'home' | 'about' | 'contact' | 'privacy' | 'terms' | 'deletion';
+export type Route = 'home' | 'services' | 'products' | 'portfolio' | 'process' | 'about' | 'careers' | 'contact' | 'privacy' | 'terms' | 'deletion';
 
 interface RouteState {
   currentRoute: Route;
@@ -9,7 +9,12 @@ interface RouteState {
 
 export function getRouteFromHash(): Route {
   const hash = window.location.hash;
+  if (hash === '#/services' || hash === '#services') return 'services';
+  if (hash === '#/products' || hash === '#products') return 'products';
+  if (hash === '#/portfolio' || hash === '#portfolio') return 'portfolio';
+  if (hash === '#/process' || hash === '#process') return 'process';
   if (hash === '#/about' || hash === '#about') return 'about';
+  if (hash === '#/careers' || hash === '#careers') return 'careers';
   if (hash === '#/contact' || hash === '#contact') return 'contact';
   if (hash === '#/privacy' || hash === '#privacy') return 'privacy';
   if (hash === '#/terms' || hash === '#terms') return 'terms';

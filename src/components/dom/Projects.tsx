@@ -7,32 +7,32 @@ export function Projects() {
 
   const projectsData = [
     {
-      title: 'Nexus Node',
-      venture: 'Aetheris AI',
-      desc: 'Distributed GPU clustering network allowing models to dynamically scale compute workloads across edge nodes.',
+      title: 'Coach CRM',
+      venture: 'Enterprise SaaS',
+      desc: 'Multi-tenant student management and automated WhatsApp fee reminders system for coaching institutes.',
       icon: <Cpu size={18} />,
-      metrics: { latency: '4.2ms', reliability: '99.99%', nodes: '12,480' },
+      metrics: { deployments: '24+ Institutes', students: '6,200+', automation: 'Twilio / WhatsApp' },
     },
     {
-      title: 'Lattice Crypt',
-      venture: 'Spectra Cyber',
-      desc: 'Post-quantum mathematical cryptography libraries designed to secure decentralized protocols.',
+      title: 'Geo-Attendance',
+      venture: 'Mobile Platform',
+      desc: 'GPS-locked, spoof-proof facial recognition check-in flow for remote and distributed field employees.',
       icon: <Terminal size={18} />,
-      metrics: { security: 'PQ-Grade', cipher: 'Kyber1024', throughput: '2.5 GB/s' },
+      metrics: { verifications: '98.4k+', avgSpeed: '1.2s', spoofBlocks: '430+' },
     },
     {
-      title: 'SynthFold 3D',
-      venture: 'Helix Bio',
-      desc: 'Generative transformer models predicting protein structures and molecular binding affinities in seconds.',
+      title: 'Hotel Booking Engine',
+      venture: 'Web App',
+      desc: 'Direct room reservation, calendar sync, and cleaning schedule coordinator for boutique hotel chains.',
       icon: <Layers size={18} />,
-      metrics: { models: 'AlphaFold-X', accuracy: '98.4%', speed: '600x faster' },
+      metrics: { bookings: '14.2k+', commissionSave: '18% avg', syncSpeed: '< 500ms' },
     },
     {
-      title: 'MetaDev Flow',
-      venture: 'Aetheris AI',
-      desc: 'Autonomous agent pipelines automating Meta developer app registration, Graph API scope configuration, and webhook relays.',
+      title: 'Passport Photo Maker',
+      venture: 'Automated Utility',
+      desc: 'Biometric image centering, scaling, and background swap API matching consulate regulations.',
       icon: <Activity size={18} />,
-      metrics: { appsCreated: '1,420+', webhookLatency: '12ms', autoScopeSync: 'Active' },
+      metrics: { photosMade: '320k+', compliance: '100% ICAO', scaleSpeed: '0.8s / img' },
     },
   ];
 
@@ -64,7 +64,7 @@ export function Projects() {
           }}
           className="reveal-fade"
         >
-          Chapter 03 // Ecosystem
+          Chapter 03 // Products
         </span>
         <h2
           style={{
@@ -79,20 +79,20 @@ export function Projects() {
           }}
           className="reveal-fade"
         >
-          Incubator Pipeline
+          Our Product Suite
         </h2>
         <p
           style={{
             fontSize: 'calc(0.85rem + 0.1vw)',
             fontFamily: "'Inter', sans-serif",
-            color: '#858599',
+            color: '#a1a1aa',
             lineHeight: 1.6,
             maxWidth: '550px',
             margin: 0,
           }}
           className="reveal-fade"
         >
-          An interconnected neural network of active software nodes, sharing infrastructure to solve critical computing bottlenecks.
+          We design, develop, and maintain our own high-performance SaaS platforms and internal business tools, proving our ability to scale software.
         </p>
       </div>
 

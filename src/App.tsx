@@ -7,6 +7,11 @@ import { Navbar } from './components/dom/Navbar';
 import { LandingPage } from './components/dom/LandingPage';
 import { About } from './components/dom/About';
 import { ContactPage } from './components/dom/ContactPage';
+import { ServicesPage } from './components/dom/ServicesPage';
+import { ProductsPage } from './components/dom/ProductsPage';
+import { PortfolioPage } from './components/dom/PortfolioPage';
+import { ProcessPage } from './components/dom/ProcessPage';
+import { CareersPage } from './components/dom/CareersPage';
 import { PrivacyPolicy } from './components/dom/PrivacyPolicy';
 import { Terms } from './components/dom/Terms';
 import { DataDeletion } from './components/dom/DataDeletion';
@@ -121,7 +126,12 @@ export default function App() {
 
       {/* Dynamic Content Routing */}
       {currentRoute === 'home' && <LandingPage />}
+      {currentRoute === 'services' && <ServicesPage />}
+      {currentRoute === 'products' && <ProductsPage />}
+      {currentRoute === 'portfolio' && <PortfolioPage />}
+      {currentRoute === 'process' && <ProcessPage />}
       {currentRoute === 'about' && <About />}
+      {currentRoute === 'careers' && <CareersPage />}
       {currentRoute === 'contact' && <ContactPage />}
       {currentRoute === 'privacy' && <PrivacyPolicy />}
       {currentRoute === 'terms' && <Terms />}

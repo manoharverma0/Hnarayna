@@ -1,5 +1,5 @@
 import { useSceneStore } from '../../stores/sceneStore';
-import { Bot, Shield, Dna } from 'lucide-react';
+import { Layers, Settings, Cpu } from 'lucide-react';
 import { useRef } from 'react';
 import { gsap } from 'gsap';
 
@@ -120,7 +120,7 @@ function VentureCard({ index, title, desc, icon, tags, color, setHoveredPlanet }
         <p
           style={{
             fontSize: '13px',
-            color: '#858599',
+            color: '#a1a1aa',
             fontFamily: "'Inter', sans-serif",
             lineHeight: 1.6,
             margin: 0,
@@ -139,7 +139,7 @@ function VentureCard({ index, title, desc, icon, tags, color, setHoveredPlanet }
             style={{
               fontSize: '10px',
               fontFamily: "'JetBrains Mono', monospace",
-              color: '#a3a3b8',
+              color: '#a1a1aa',
               background: 'rgba(255,255,255,0.03)',
               padding: '4px 10px',
               borderRadius: '20px',
@@ -159,24 +159,24 @@ export function Ventures() {
 
   const venturesData = [
     {
-      title: 'Aetheris AI',
-      desc: 'Building autonomous cognitive networks, neural orchestration frameworks, and next-generation model training models.',
-      icon: <Bot size={22} />,
-      tags: ['LLMs', 'Cognitive Systems', 'Agents'],
+      title: 'Product Studio',
+      desc: 'Designing and engineering custom SaaS, high-scale web apps, and mobile applications from concept to production release.',
+      icon: <Layers size={22} />,
+      tags: ['SaaS', 'Web Apps', 'Mobile Apps'],
       color: '#5B4CFF',
     },
     {
-      title: 'Spectra Cyber',
-      desc: 'Quantum-resistant encryption, decentralized identity protocols, and automated active threat vector mitigation engines.',
-      icon: <Shield size={22} />,
-      tags: ['Quantum Sec', 'ZKP', 'Zero Trust'],
+      title: 'Business Automation',
+      desc: 'Automating internal workflows, digitizing legacy systems, and building custom CRM/ERP tools to streamline operations.',
+      icon: <Settings size={22} />,
+      tags: ['CRM/ERP', 'Workflows', 'Automation'],
       color: '#C9A84C',
     },
     {
-      title: 'Helix Bio',
-      desc: 'Pioneering organic computing architectures, DNA-based storage models, and biological data synthesis pipelines.',
-      icon: <Dna size={22} />,
-      tags: ['Bio-Computing', 'DNA-Storage', 'Synthesis'],
+      title: 'Advanced Systems',
+      desc: 'Integrating robust API architectures, custom cloud infrastructure, and AI-powered solutions where they add genuine value.',
+      icon: <Cpu size={22} />,
+      tags: ['APIs', 'Cloud Platforms', 'Practical AI'],
       color: '#4CFFB4',
     },
   ];
@@ -209,7 +209,7 @@ export function Ventures() {
           }}
           className="reveal-fade"
         >
-          Chapter 02 // Division
+          Chapter 02 // Capability
         </span>
         <h2
           style={{
@@ -224,20 +224,20 @@ export function Ventures() {
           }}
           className="reveal-fade"
         >
-          Mitosis of Capital & Code
+          Engineering Pillars
         </h2>
         <p
           style={{
             fontSize: 'calc(0.85rem + 0.1vw)',
             fontFamily: "'Inter', sans-serif",
-            color: '#858599',
+            color: '#a1a1aa',
             lineHeight: 1.6,
             maxWidth: '550px',
             margin: 0,
           }}
           className="reveal-fade"
         >
-          Hnarayna splits its core resources into independent technology vectors, giving birth to dedicated child companies focused on key frontiers.
+          We combine product strategy, clean code engineering, and systems automation to design and deploy modern software architectures.
         </p>
       </div>
 
